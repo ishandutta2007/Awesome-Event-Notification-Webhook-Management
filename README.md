@@ -1,6 +1,6 @@
 # Awesome-Event-Notification-Webhook-Management
 
-# Top Event Notification & Webhook Management Ecosystem
+## Top Event Notification & Webhook Management Ecosystem
 
 **Curated List of SaaS Platforms & Open-Source GitHub Projects**  
 *Focused on Outbound Webhook Delivery, Inbound Proxying & Multi-Channel Notifications*  
