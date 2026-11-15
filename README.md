@@ -1,2 +1,71 @@
 # Awesome-Event-Notification-Webhook-Management
 
+# Top Event Notification & Webhook Management Ecosystem
+
+**Curated List of SaaS Platforms & Open-Source GitHub Projects**  
+*Focused on Outbound Webhook Delivery, Inbound Proxying & Multi-Channel Notifications*  
+**Last updated: March 2026**
+
+This repository tracks notable **SaaS platforms** and **open-source projects** for **Event Notification & Webhook Management**. These tools help applications reliably deliver events to customer endpoints—covering everything from outbound webhook fan-out with retries and signing to inbound webhook proxies that buffer, inspect, and forward events to your local or private services.
+
+**Examples** include Svix, Hookdeck, Hook0, Convoy, Hookdash, Novu, Courier, Inngest, and Pipedream (the category leaders).
+
+**Open-source emphasis**: This section highlights every major active project for self-hosted webhook delivery, open-source notification infrastructure, and community-driven event gateways—ideal for developers seeking data sovereignty and avoiding per-event or per-message SaaS pricing. The open-source landscape splits into **outbound delivery engines** (Hook0, Outpost, Convoy) that fan out events to customer webhooks, and **notification infrastructure** (Novu) that unifies email, SMS, push, and chat alongside webhooks.
+
+Contributions welcome! Open an PR to add/update entries. Keep descriptions factual and link to official sites.
+
+## Table of Contents
+- [SaaS/Hosted Platforms](#saas-products)
+- [Open-Source GitHub Projects](#open-source-github-projects)
+- [How to Contribute](#how-to-contribute)
+- [Disclaimer](#disclaimer)
+
+## SaaS/Hosted Platforms
+
+| Product | Description | Pricing (Starting) | Free Tier / Trial Limits |
+|---------|-------------|-------------------|--------------------------|
+| **[Svix](https://www.svix.com/)** | **The webhook service standard.** Hosted webhook delivery with a Rust-based open-source server as its foundation. **Standard Webhooks** spec originator (HMAC-SHA256 with `svix-id`, `svix-timestamp`, `svix-signature`). **8 retries over ~28 hours** with automatic pause after 5 days of failures. Supports replay (single message, failed from date, or missing) and rate limiting per endpoint . **Trade-off**: the open-source server is open-core—**some hosted features are not yet available in the repo**, and self-hosted support requires Enterprise . | Quote-only (hosted); open-source server MIT licensed | No free tier for hosted; open-source server available |
+| **[Hookdeck](https://hookdeck.com/)** | **Inbound webhook proxy and event gateway.** Receives webhooks from providers (Stripe, GitHub, Shopify), buffers them, and forwards to your application with retries and observability. **Separate product Outpost** handles outbound delivery (Apache-2.0, self-hostable). | Quote-only (Event Gateway is cloud-only); Outpost free to self-host | No free tier for Event Gateway; Outpost Apache-2.0 |
+| **[Courier](https://www.courier.com/)** | **Multi-channel notification API.** Sends notifications across email, SMS, push, and chat with a unified API. **Developer plan free for up to 10,000 sends/month**. **Business: $0.005 per send** (pay-as-you-go) . | Business: **$0.005/send**; Developer: **free** (10K sends/month) | **Free**: 10,000 sends/month |
+| **[Inngest](https://www.inngest.com/)** | **Workflow orchestration for event-driven automations.** Durable step functions with retries, flow control (concurrency, throttling, debouncing), and event replay. **Self-hosting supported** since v1.0 with SQLite or PostgreSQL . | Quote-only (cloud); self-hosted free | Self-hosted free (open-source); cloud trial available |
+| **[Pipedream](https://pipedream.com/)** | **Integration platform for event-driven workflows.** Connects 1,000+ APIs with pre-built components and custom Node.js/Python/Go/Bash code. **Free for individual developers** . | Free for individuals; paid plans for teams | **Free**: individual developer tier with usage limits |
+| **[Zapier Webhooks](https://zapier.com/)** | No-code webhook triggers and actions within Zapier. Receives inbound webhooks and sends outbound requests as part of multi-step Zaps. | Free tier limited to 2-step Zaps; Professional from ~$19.99/month | **Free**: 100 tasks/month, 2-step Zaps only |
+
+## Open-Source GitHub Projects
+
+| Project | Star Badge | Description |
+|---------|------------|-------------|
+| **[Hook0](https://github.com/hook0/hook0)** | [![Stars](https://img.shields.io/github/stars/hook0/hook0?style=social&color=white)](https://github.com/hook0/hook0/stargazers) | **The most complete open-source outbound webhook platform with full-feature-parity self-hosting.** **SSPL-1.0 licensed, no closed tier**. **Multi-tenant label-based filtering**, HMAC signatures, fixed escalating backoff retries capped by max retries + window, **dead letter queue** (failed attempts kept and replayable), dot-notation event type hierarchy, delivery logs and replay, REST API, and **SDKs for 12+ languages** (JS, Rust, Python, Go, Ruby, PHP, C#, Java, Kotlin, Lua, Zig). Authentication via Biscuit tokens + service tokens. EU data plane available . **Best for SaaS products needing to offer webhooks to customers** without per-event fees . |
+| **[Outpost (Hookdeck)](https://github.com/hookdeck/outpost)** | [![Stars](https://img.shields.io/github/stars/hookdeck/outpost?style=social&color=white)](https://github.com/hookdeck/outpost/stargazers) | **Production-ready self-hosted outbound webhook and event destinations infrastructure.** Apache-2.0, Go binary/Docker. Delivers to **11 destination types**: webhooks, AWS SQS, S3, EventBridge, Kinesis, GCP Pub/Sub, Azure Service Bus, RabbitMQ, Kafka, Cloudflare Queues, and Hookdeck Event Gateway . **Exponential backoff** with 30-second base, up to 10 retries. HMAC-SHA256 signing or Standard Webhooks headers. **Multi-tenant with a customer portal** for endpoint management and failed delivery retries. **Same codebase as managed Outpost**—no feature removal . **Best for teams wanting production-grade delivery to queues and webhooks** without vendor lock-in . |
+| **[Convoy](https://github.com/frain-dev/convoy)** | [![Stars](https://img.shields.io/github/stars/frain-dev/convoy?style=social&color=white)](https://github.com/frain-dev/convoy/stargazers) | **Go-based webhooks gateway with dashboard, retries, and rate limiting.** **Elastic License v2.0**—paid features behind a license key. Acts as an edge gateway for both outbound delivery and inbound routing. **Horizontally scalable** with independent api/worker/scheduler/socket-server components. **Fan-out** to multiple endpoints based on event type or payload. **Rate limiting per endpoint**, retries (constant or exponential with jitter), **customer-facing iframe dashboard** for debugging and retries, and endpoint failure notifications (email/Slack) . **Best for teams wanting a dedicated webhook message queue** that handles both directions . |
+| **[Hookdash](https://www.npmjs.com/package/hookdash)** | [![Stars](https://img.shields.io/github/stars/hookdash/hookdash?style=social&color=white)](https://github.com/hookdash/hookdash/stargazers) | **Zero-config self-hosted webhook gateway with SQLite only—no Redis, no Postgres.** MIT licensed. **`npx hookdash start`** runs in seconds. **Signature verification for Stripe, GitHub, Twilio, Shopify, and generic HMAC**. Smart retries with exponential backoff and jitter. **Circuit breaker** auto-disables failing endpoints and probes for recovery. **Dead letter queue** and **one-click replay** from dashboard. **Beautiful dark UI** with live event stream. Docker ready . **Best for small teams and solo developers** wanting webhook handling without database infrastructure . |
+| **[Novu](https://github.com/novuhq/novu)** | [![Stars](https://img.shields.io/github/stars/novuhq/novu?style=social&color=white)](https://github.com/novuhq/novu/stargazers) | **Open-source notification infrastructure for transactional and multi-channel communications.** **Email, SMS, push, in-app, and chat** channels with 60+ provider integrations. **Workflows** define multi-step notification logic; **Inbox** component provides embeddable notification UI; **Agent Communication Infrastructure (ACI)** for agent conversations. Self-hostable on your own infrastructure . **Best for products needing unified multi-channel notifications** with webhooks as one channel among many . |
+
+### Additional Strong Open-Source Options
+
+| Project | Star Badge | Description |
+|---------|------------|-------------|
+| **[good-webhooks](https://github.com/pplytas/good-webhooks)** | [![Stars](https://img.shields.io/github/stars/pplytas/good-webhooks?style=social&color=white)](https://github.com/pplytas/good-webhooks/stargazers) | **Outbox-pattern webhook library that joins your database transaction.** MIT licensed. **`publish()` writes in the same transaction as your business logic**—no separate outbox table, no lost events if the app crashes before HTTP delivery. Standard Webhooks signing (HMAC-SHA256), **8 retries over ~28 hours** with `Retry-After` on 429/503, automatic pause after 5 days of failures or 410, replay (single or page), PostgreSQL storage . **Best for teams wanting webhook delivery as a library** rather than a separate service . |
+| **[Inngest (OSS)](https://github.com/inngest/inngest)** | [![Stars](https://img.shields.io/github/stars/inngest/inngest?style=social&color=white)](https://github.com/inngest/inngest/stargazers) | **Durable workflow orchestration with self-hosting support.** **Single binary with SQLite or PostgreSQL**—zero dependencies for initial setup. Event API, queue with flow control (concurrency, throttling, rate limiting, debouncing), and state store for step functions. **The same code powers the cloud platform** . **Best for teams wanting event-driven workflows with durability** rather than pure webhook delivery . |
+
+**Frameworks for building custom systems**: Choose **Hook0** for full-feature-parity outbound webhooks with multi-tenant filtering , **Outpost** for production delivery to queues and webhooks with a customer portal , or **Hookdash** for zero-config SQLite-only handling —all without per-event SaaS fees. For **multi-channel notifications**, **Novu** unifies webhooks with email, SMS, and push.
+
+## How to Contribute
+
+1. Fork the repo.
+2. Add/edit entries in `README.md` (follow existing format).
+3. Include: name, link, 1–2 sentence description, and whether it's SaaS or open-source.
+4. Submit PR with a short explanation.
+
+Star the repo if you find it useful!
+
+## Disclaimer
+
+- This is a **community-curated** list — not exhaustive and not an endorsement.
+- Webhook and notification platforms handle event payloads that may contain sensitive data; enforce HMAC signature verification, HTTPS-only endpoints, and idempotent processing (delivery is **at-least-once**, not exactly-once) .
+- **Open-source webhook tooling has different licensing and feature trade-offs.** **Hook0 is SSPL-1.0**—not OSI-approved, but full-feature-parity self-hosting with no closed tier . **Svix's open-source server is open-core**—some hosted features are not in the repo, and supported on-prem requires Enterprise . **Outpost is Apache-2.0** with the same codebase as managed Hookdeck—no feature removal . **Convoy uses Elastic License v2.0** with paid features behind a license key . **Hookdash is MIT** and requires only SQLite—no Redis or Postgres . **Novu is open-source** but competes in a different category (multi-channel notifications, not pure webhook delivery) . **Validate whether you need outbound delivery (Hook0, Outpost), inbound proxying (Hookdeck Event Gateway), or multi-channel notifications (Novu)** before committing.
+
+---
+
+**Made for developers, platform engineers, and teams building event-driven infrastructure.**  
+Let's make event notification and webhook management more open, reliable, and developer-friendly.
