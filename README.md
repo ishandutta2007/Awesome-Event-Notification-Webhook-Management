@@ -15,10 +15,15 @@ This repository tracks notable **SaaS platforms** and **open-source projects** f
 Contributions welcome! Open an PR to add/update entries. Keep descriptions factual and link to official sites.
 
 ## Table of Contents
+- [Sector Overview & Market Dynamics](#sector-overview--market-dynamics)
 - [SaaS/Hosted Platforms](#saas-products)
 - [Open-Source GitHub Projects](#open-source-github-projects)
 - [How to Contribute](#how-to-contribute)
 - [Disclaimer](#disclaimer)
+
+## Sector Overview & Market Dynamics
+
+The global market for event-driven architecture (EDA) and integration platforms is estimated at **$3.7B to $5.8B** (growing at an ~18–21% CAGR) as enterprises shift toward asynchronous microservices and real-time AI workflows. The sector is currently **highly fragmented** across pure-play webhook deliverability engines, multi-channel notification gateways, and broader iPaaS solutions—meaning no single winner takes all, and developers actively balance specialized SaaS tools against self-hosted open-source infrastructure.
 
 ## SaaS/Hosted Platforms
 
