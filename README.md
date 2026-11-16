@@ -6,7 +6,7 @@
 
 <p align="center">
   <a href="https://github.com/ishandutta2007/Awesome-Awesome-Awesome"><img src="https://img.shields.io/badge/Awesome-%E2%9C%94-blueviolet?style=flat-square&logo=github" alt="Awesome"/></a><a href="https://discord.gg/jc4xtF58Ve"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a>
-  <a href="https://github.com/ishandutta2007/Awesome-Event-Notification-Webhook-Management/stargazers"><img src="https://img.shields.io/github/stars/ishandutta2007/Awesome-Event-Notification-Webhook-Management?style=social" alt="GitHub stars" /></a>
+  <a href="https://github.com/ishandutta2007/Awesome-Event-Notification-Webhook-Management/stargazers"><img src="https://img.shields.io/github/stars/ishandutta2007/Awesome-Event-Notification-Webhook-Management?style=social" alt="GitHub_Stars" /></a>
   <a href="https://github.com/ishandutta2007/Awesome-Event-Notification-Webhook-Management/network/members"><img src="https://img.shields.io/github/forks/ishandutta2007/Awesome-Event-Notification-Webhook-Management?style=social" alt="GitHub forks" /></a>
   <a href="https://github.com/ishandutta2007/Awesome-Event-Notification-Webhook-Management/issues"><img src="https://img.shields.io/github/issues/ishandutta2007/Awesome-Event-Notification-Webhook-Management?style=flat-square&color=blue" alt="GitHub issues" /></a>
   <a href="https://github.com/ishandutta2007/Awesome-Event-Notification-Webhook-Management/blob/main/LICENSE"><img src="https://img.shields.io/github/license/ishandutta2007/Awesome-Event-Notification-Webhook-Management?style=flat-square&color=emerald" alt="License" /></a>
@@ -62,7 +62,7 @@ The global market for **Event-Driven Architecture (EDA) and Integration Platform
 
 *Curated active repositories for self-hosted webhook delivery, notification gateways, and event infrastructure, sorted descending by GitHub stargazers count.*
 
-| Project | Stars | Description | License |
+| Project | GitHub_Stars | Description | License |
 |:---|:---:|:---|:---:|
 | **[Novu](https://github.com/novuhq/novu)** | [![Stars](https://img.shields.io/github/stars/novuhq/novu?style=social&color=white)](https://github.com/novuhq/novu/stargazers) | 🔔 **Open-source notification infrastructure for transactional & multi-channel messaging.** Connects email, SMS, push, in-app inbox, chat, and webhooks with multi-step workflows, visual editor, and provider integrations. | MIT / AGPL-3.0 |
 | **[Apprise](https://github.com/caronc/apprise)** | [![Stars](https://img.shields.io/github/stars/caronc/apprise?style=social&color=white)](https://github.com/caronc/apprise/stargazers) | 📢 **Push notifications that work with almost every service.** Single Python library and CLI gateway to deliver instant notifications and webhooks to 90+ platforms (Discord, Slack, Telegram, Twilio, Matrix, Email, MQTT, etc.). | BSD-3-Clause |
